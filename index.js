@@ -7,7 +7,9 @@ const fetch = require("node-fetch");
 var express = require("express");
 var app = express();
 var server = require("http").createServer(app);
-var io = require("socket.io")(server);
+// var io = require("socket.io")(server);
+const { Server } = require("socket.io");
+const io = new Server(server);
 var port = process.env.PORT || 3000;
 
 var players = {};
